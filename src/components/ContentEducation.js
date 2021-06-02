@@ -1,7 +1,8 @@
 
 import React from 'react'
 
-function ContentEducation() {
+function ContentEducation({personalinfo}) {
+    const {university,degree,year} = personalinfo.education; 
     return (
         <section id="content-education" >
         <div className="container">
@@ -12,27 +13,18 @@ function ContentEducation() {
                     <hr  />
 
                     <ul>
-                        <li>
-                            <span className="span-right">Sept 2012</span>
-                            <h4>Universidad de manizales,Colombia</h4>
+                    {personalinfo.education.map((item,index) =>(
+                        <li key={index}>
+                            <span className="span-right">{item.year}</span>
+                            <h4>{item.university}</h4>
+                            {console.log(`Hi juan`+item)}
                             <p>
-                               Bachelor in Computer Science 
+                              {item.degree}
                             </p>
                     </li>
-                    <li>
-                        <span className="span-right">Sept 2012</span>
-                        <h4>Universidad de manizales,Colombia</h4>
-                        <p>
-                           Bachelor in Computer Science 
-                        </p>
-                </li>
-                <li>
-                    <span className="span-right">Sept 2012</span>
-                    <h4>Universidad de manizales,Colombia</h4>
-                    <p>
-                       Bachelor in Computer Science 
-                    </p>
-            </li>
+                    ))}
+                     
+                 
                 </ul>
                    
                 </div>

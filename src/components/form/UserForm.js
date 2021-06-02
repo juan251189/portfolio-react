@@ -2,18 +2,34 @@ import React,{useState} from 'react';
 import FormUserDetails from './FormUserDetails';
 import FormPersonalDetails from './FormPersonalDetails';
 import FormSkills from './FormSkills'
+import ContentExperience from '../ContentExperience';
+import Header from '../Header';
+import Hobbies from '../Hobbies';
+import ContentEducation from '../ContentEducation';
 
 function UserForm() {
 
    const [personalinfo,setPersonalinfo] = useState({
        name:"",
        email:"",
+       phone:"",
        portfolio:"",
        linkedin:"",
        github:"",
        experience:[],
        aboutme:"",
-       skills:[],
+       skills:[
+        {skill:"html",isclicked:false},
+        {skill:"css",isclicked:false},
+        {skill:"Javascript",isclicked:false},
+        {skill:"React",isclicked:false},
+        {skill:"Vue.js",isclicked:false},
+        {skill:"Node.js",isclicked:false},
+        {skill:"Ruby on Rails",isclicked:false},
+        {skill:"SQL",isclicked:false},
+        {skill:"AWS",isclicked:false},
+        {skill:"PHP",isclicked:false}
+       ],
        education:[],
        organizations:[],
        step:1
@@ -95,13 +111,22 @@ function UserForm() {
                     handleChanger={handleChanger}
                     handlerArray = {handlerArray}
                     personalinfo={personalinfo}
+                    setPersonalinfo = {setPersonalinfo}
                     prevStep={prevStep}
 
                 />
             )    
         case 4:
             return(
-                <h1>Success</h1>
+                <div>
+                     <Header personalinfo={personalinfo} />
+
+<ContentExperience personalinfo = {ContentExperience} />
+
+<ContentEducation personalinfo={personalinfo}/>
+<Hobbies />
+                </div>
+               
             )          
     }
 }

@@ -1,4 +1,4 @@
-body{
+.App{
     box-sizing: border-box;
     font-family: 'montserrat',sans-serif;
 
@@ -295,7 +295,7 @@ font-size: 1.5rem;
 
 
     font-family: 'montserrat',sans-serif;
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 400;
 
 
@@ -306,7 +306,9 @@ font-size: 1.5rem;
 }
 
 .card-skills:hover{
-background-image: linear-gradient(grey,lightgrey);
+background-image: linear-gradient(grey,green);
+cursor: pointer;
+
 
 transition: 0.5 ease-in;
 box-shadow: 2px 3px 3px #313331;
@@ -315,6 +317,8 @@ box-shadow: 2px 3px 3px #313331;
 .clicked{
     background-image: linear-gradient(green,lightgreen);
     color: white;
+
+    font-weight: 500;
 }
 
 
