@@ -121,7 +121,7 @@ function UserForm() {
                 <div>
                      <Header personalinfo={personalinfo} />
 
-<ContentExperience personalinfo = {ContentExperience} />
+<ContentExperience personalinfo = {personalinfo} />
 
 <ContentEducation personalinfo={personalinfo}/>
 <Hobbies />
