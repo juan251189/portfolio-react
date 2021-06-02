@@ -1,10 +1,23 @@
 import React,{useState} from 'react';
 import FormUserDetails from './FormUserDetails';
-import FormPersonalDetails from './FormPersonalDetails'
+import FormPersonalDetails from './FormPersonalDetails';
+import FormSkills from './FormSkills'
 
 function UserForm() {
 
-   const [personalinfo,setPersonalinfo] = useState({name:"",lastname:"",email:"",step:1});
+   const [personalinfo,setPersonalinfo] = useState({
+       name:"",
+       email:"",
+       portfolio:"",
+       linkedin:"",
+       github:"",
+       experience:[],
+       aboutme:"",
+       skills:[],
+       education:[],
+       organizations:[],
+       step:1
+    });
   
 
 
@@ -28,12 +41,31 @@ function UserForm() {
     //handle fields change 
 
     function handleChanger(evt) {
-        const value = evt.target.value;
+               const value = evt.target.value;
+        const name = evt.target.name;
+ 
         setPersonalinfo({
           ...personalinfo,
           [evt.target.name]: value
         });
       }
+
+
+      function handlerArray(name,evt){
+
+        if(name === 'skills'){
+            setPersonalinfo({...personalinfo,[name]:evt})
+        } else{
+          const completearray =[...personalinfo[name],evt];
+        
+        
+          console.log(completearray);
+
+        setPersonalinfo({...personalinfo,[name]:completearray})
+        }
+      }
+
+
     
 
 
@@ -50,13 +82,22 @@ function UserForm() {
                 <FormPersonalDetails 
                      nextStep={nextStep}
                     handleChanger={handleChanger}
+                    handlerArray = {handlerArray}
                     personalinfo={personalinfo}
                     prevStep={prevStep}
                 />
             )  
          case 3:
             return(
-                <h1>Comfirm</h1>
+                <FormSkills 
+                
+                nextStep={nextStep}
+                    handleChanger={handleChanger}
+                    handlerArray = {handlerArray}
+                    personalinfo={personalinfo}
+                    prevStep={prevStep}
+
+                />
             )    
         case 4:
             return(

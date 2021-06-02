@@ -1,6 +1,29 @@
-import React from 'react'
+import React,{useState} from 'react'
+import FormList from './FormList';
 
-function FormPersonalDetails({nextStep,handleChanger,personalinfo,prevStep}) {
+function FormPersonalDetails({nextStep,handleChanger,handlerArray,personalinfo,prevStep}) {
+   const [education,setEducation] = useState({
+       university:'',
+       degree:'diploma',
+       year:''
+   })
+   
+   function handler (e){
+      setEducation(
+       {...education,
+           [e.target.name]:e.target.value
+        }) 
+       
+   }
+
+   function addEducation(){
+    handlerArray("education",education);
+    setEducation({   university:'',
+       degree:'diploma',
+       year:''});
+       
+   }
+
 
 const continues = () => {
     
@@ -14,37 +37,35 @@ const back =() => {
     return (
         <div className="p-5">
             <div className="jumbotron">FormPersonalDetails</div>
-            <div className="form-group">
-             <label htmlFor="email ">Your full name</label>
-             <input type="text" 
-             onChange={handleChanger}   
-             className="form-control"
-             value={personalinfo.name}
+            <div>
+                <input type="text" name="university" value={education.university}
+                    onChange={handler}
+                />
+                <select name="degree" defaultValue={education.degree} onChange={handler} >
+                    <option value="diploma">Diploma</option>
+                    <option value="advancediploma">Advance diploma</option>
+                    <option value="bachelor">Bachelor</option>
+                    <option value="master">Master</option>
+                    <option value="phd">PHD</option>
+                </select>
+                <button 
+                className="btn btn-info"
+                onClick={addEducation} >Add Skill</button>
+
+            </div>
+
+            <FormList personalinfo={personalinfo.education}/>
             
-             placeholder="Enter your name"
-             name="name"
-             style={{borderBottom:"2px solid grey"}}
-             />
-            </div>
-            <div className="form-group">
-             <label htmlFor="email ">Your Email</label>
-             <input type="text" 
-             onChange={handleChanger}   
-             className="form-control" 
-             placeholder="Enter Email"
-             value = {personalinfo.email} 
-             style={{borderBottom:"2px solid grey"}}
-             name="email"  
-             />
-            </div>
+
             <div className="d-flex justify-content-around">
             <button type="button" className="btn btn-secondary"
-            onClick={back}
-            >Back</button>
-            <button type="button" className="btn btn-primary"
-            onClick={continues}
+            onClick={prevStep}
+            >back</button>
+                 <button type="button" className="btn btn-primary"
+            onClick={nextStep}
             >Next</button>
             </div>
+        
          
          
 
