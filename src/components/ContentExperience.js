@@ -43,7 +43,7 @@ function ContentExperience({personalinfo}) {
 
 
                             <div className="col-12">
-                            <h3><i className="fa fa-star fa-user" ></i>ABOUT ME</h3>
+                            <h3><i className="fa fa-star fa-user" ></i>SKILLS</h3>
                                 <hr/>
 
                                 <div className="row">

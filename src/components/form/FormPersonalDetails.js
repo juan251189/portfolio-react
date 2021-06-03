@@ -35,7 +35,7 @@ const back =() => {
 }
 
     return (
-        <div className="p-5">
+        <div className="form-personal-details container">
             <div className="jumbotron">FormPersonalDetails</div>
             <div>
                 <input type="text" name="university" value={education.university}

@@ -1,10 +1,27 @@
 .App{
+    
     box-sizing: border-box;
     font-family: 'montserrat',sans-serif;
 
+    background-image: url('/src/assets/img/plain-blue-bg.jpg');
+    background-position: center;
+    background-size: cover;
+
     font-size: 20px;
     color:lightslategrey!important;
+    text-align: center;
+  
     background-color: white;
+   
+
+    width: 100%;
+    min-height: 100vh;
+
+    margin: 0;
+    padding: 40px 0 0;
+
+    overflow-y: hidden;
+
 
     
 }
@@ -137,6 +154,15 @@ hr{
 
 }
 
+#content-education{
+    width: 100%;
+    margin: 0;
+    padding:0;
+overflow:hidden!important;
+
+    
+}
+
 #content-experience{
     background: #f5f4f2;
     padding: 0px;
@@ -259,7 +285,10 @@ font-size: 1.5rem;
     color:#363535;
 }
 
-
+.skills-section{
+    margin-bottom: 30px;
+    padding-bottom: 30px;
+}
 .skills-content{
     
    
@@ -323,8 +352,43 @@ box-shadow: 2px 3px 3px #313331;
 
 
 
+.form-user-details{
+    max-width:500px!important;
+    background-color: rgb(255,255,255,0.5);
+    border: 1px solid grey;
+
+    margin: 0 auto;
+   
+    padding: 20px ;
+    text-align: center;
+
+    display:grid;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    align-items: center;
+}
 
 
+.cv-template{
+
+    padding:0;
+    margin: 0;
+   
+    width: 100%;
+    height: auto;
+    background-color: white;
+    border:3px solid red!important;
+}
+
+
+.section{
+    background-color: rgb(255,255,255,0.5);
+    min-height: 90vh;
+}
+.form-personal-details{
+    background-color: rgb(255,255,255,0.5);
+    min-height: 90vh;
+}
 
 
 

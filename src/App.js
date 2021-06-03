@@ -1,41 +1,17 @@
 
 import './App.css';
 import React,{useState,useRef} from 'react'
-import Header from './components/Header';
-import ContentExperience from './components/ContentExperience'
+
 import UserForm from './components/form/UserForm'
 
 function App() {
-    const [info, setInfo]=useState({});
+    const [step, setStep]=useState(0);
     
-
-    const name = useRef(null);
-    const email= useRef(null);
-    const github=useRef(null);
-
-    const addInfo = (e) =>{
-        e.preventDefault();
-        setInfo(state => ({
-          ...state,
-            "name":name.current.value,
-            "email":email.current.value,
-            "github":github.current.value
-        }));
-        console.log(info);
-    }
-
-    const infoHandle = (e) =>{
-      e.preventDefault();
-      setInfo(state =>({
-        ...state,
-        [e.target.name]:e.target.value
-      }))
-     
-    }
 
 
   return (
-    <div className="App">
+    <div className="App border" >
+    
       
     <UserForm />
      {/* <div className="container main-content">
@@ -104,6 +80,7 @@ function App() {
         
       
      </div> */}
+     
     </div>
   );
 }

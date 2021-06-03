@@ -88,7 +88,7 @@ function UserForm() {
     switch (step) {
         case 1:
             return(
-                <FormUserDetails
+                <FormUserDetails 
                     nextStep={nextStep}
                     handleChanger={handleChanger}
                     personalinfo={personalinfo} />
@@ -118,7 +118,7 @@ function UserForm() {
             )    
         case 4:
             return(
-                <div>
+                <div className="cv-template container-fluid ">
                      <Header personalinfo={personalinfo} />
 
 <ContentExperience personalinfo = {personalinfo} />

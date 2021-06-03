@@ -44,7 +44,7 @@ function FormSkills({prevStep,nextStep,handlerArray,personalinfo,setPersonalinfo
   //  }
     
     return (
-        <div className="">
+        <div className="container section skills-section">
          <div className="jumbotron">Now select your skills</div>
 
          <div className="skills-content">

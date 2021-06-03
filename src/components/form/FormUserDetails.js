@@ -7,7 +7,7 @@ const continues = () => {
 }
 
     return (
-        <div className="p-5 " style={{maxWidth:"600px"}}>
+        <div className="form-user-details container" style={{maxWidth:"600px"}}>
      
             <div className="form-group">
              <label htmlFor="email ">Your full name</label>
