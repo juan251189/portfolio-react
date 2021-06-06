@@ -5,7 +5,8 @@ function FormPersonalDetails({nextStep,handleChanger,handlerArray,personalinfo,p
    const [education,setEducation] = useState({
        university:'',
        degree:'diploma',
-       year:''
+       graduationDate:'',
+       course:''
    })
    
    function handler (e){
@@ -13,14 +14,16 @@ function FormPersonalDetails({nextStep,handleChanger,handlerArray,personalinfo,p
        {...education,
            [e.target.name]:e.target.value
         }) 
-       
+      
    }
 
    function addEducation(){
     handlerArray("education",education);
     setEducation({   university:'',
        degree:'diploma',
-       year:''});
+       graduationDate:'',
+        course:''
+    });
        
    }
 
@@ -37,27 +40,70 @@ const back =() => {
     return (
         <div className="form-personal-details container">
             <div className="jumbotron">FormPersonalDetails</div>
-            <div>
-                <input type="text" name="university" value={education.university}
+
+            <div className="row form-inner">
+                <div className="col-md-6 col-sm-12 mb-4">
+                
+                <input type="text" name="university" placeholder="University..."
+                value={education.university}
+                style={{'width':'100%','padding':0,'margin':0}}
+               
                     onChange={handler}
                 />
-                <select name="degree" defaultValue={education.degree} onChange={handler} >
-                    <option value="diploma">Diploma</option>
-                    <option value="advancediploma">Advance diploma</option>
-                    <option value="bachelor">Bachelor</option>
-                    <option value="master">Master</option>
-                    <option value="phd">PHD</option>
-                </select>
-                <button 
-                className="btn btn-info"
-                onClick={addEducation} >Add Skill</button>
+               
+                </div>
 
+                <div className="col-md-6 col-sm-12">
+               
+            
+
+               <div className="input-group mb-3">
+ <div className="input-group-prepend">
+   <label className="input-group-text" htmlFor="inputGroupDegree">Degree</label>
+ </div>
+ <select className="custom-select" id="inputGroupDegree"
+    name="degree" defaultValue={education.degree} onChange={handler}>
+ <option value="diploma">Diploma</option>
+                   <option value="advancediploma">Advance diploma</option>
+                   <option value="bachelor">Bachelor</option>
+                   <option value="master">Master</option>
+                   <option value="phd">PHD</option>
+ </select>
+
+               </div>
+               </div>
+                <div className="col-md-6 col-sm-12 mb-4">
+                
+                <input type="text" name="course" placeholder=" Course..."
+                value={education.course}
+                style={{'width':'100%','padding':0,'margin':0}}
+                    onChange={handler}
+                />
+               
+                </div>
+
+                <div className="col-md-6 col-sm-12 mb-4">
+                
+                <input type="date" name="graduationDate" placeholder="date"
+                value={education.graduationDate}
+                style={{'width':'100%','padding':0,'margin':0}}
+                    onChange={handler}
+                />
+               
+                </div>
+                <input 
+                type="submit"
+                onClick={addEducation} value="Add Skill" />
+                   
+
+              
             </div>
+            
 
             <FormList personalinfo={personalinfo.education}/>
             
 
-            <div className="d-flex justify-content-around">
+            <div className="d-flex justify-content-around pt-4">
             <button type="button" className="btn btn-secondary"
             onClick={prevStep}
             >back</button>

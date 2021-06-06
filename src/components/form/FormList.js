@@ -3,10 +3,12 @@ import ListItem from './ListItem'
 
 function FormList({personalinfo}) {
 
+    //please update the delete function . it is not in functionality
 function removeStudies(){
-    console.log("erased");
+//   let temporalArray = [...personalinfo];
+//   const removedValue = temporalArray.filter(ind => temporalArray[ind]);
+//   console.log(removedValue);
 }
-
     return (
         <div className="education-list">
                {personalinfo.map((value,index) =>(

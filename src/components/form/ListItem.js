@@ -1,12 +1,16 @@
 import React from 'react'
 
 function ListItem({studies,removeStudies,index}) {
+
+  
+
+
     return (
-        <div className="income-item">
+        <div className="education-item">
         <button className="remove-item" onClick={()=>removeStudies(index)}>x</button>
-            <div className="desc">{studies.university}</div>
-            <div className="price">{studies.degree}</div> 
-            <div className="date"></div> 
+            <div className="item-uni">{studies.university}</div>
+            <div className="item-degree">{studies.degree}</div> 
+            <div className="item-date">{studies.graduationDate}</div> 
         </div>
     )
 }
