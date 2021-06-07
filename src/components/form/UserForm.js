@@ -82,6 +82,17 @@ function UserForm() {
       }
 
 
+      function deleteEducation (i){
+          let educationArray = [...personalinfo.education];
+          let newArray=educationArray[i];
+          let filteredArray = educationArray.filter(item =>item!==newArray)
+        //  let finalArray = educationArray.filter.filteredlArray(educationArray,i);
+        console.log(filteredArray);
+        setPersonalinfo({...personalinfo,'education':filteredArray})
+          
+      }
+
+
     
 
 
@@ -101,6 +112,7 @@ function UserForm() {
                     handlerArray = {handlerArray}
                     personalinfo={personalinfo}
                     prevStep={prevStep}
+                    deleteEducation={deleteEducation}
                 />
             )  
          case 3:

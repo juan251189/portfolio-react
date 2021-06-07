@@ -1,7 +1,7 @@
 import React from 'react'
 import ListItem from './ListItem'
 
-function FormList({personalinfo}) {
+function FormList({personalinfo,deleteEducation}) {
 
     //please update the delete function . it is not in functionality
 function removeStudies(){
@@ -17,6 +17,7 @@ function removeStudies(){
                removeStudies={removeStudies}
                index={index} 
                key={index}
+               deleteEducation={deleteEducation}
                />
            ))}
         </div>

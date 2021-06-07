@@ -1,7 +1,7 @@
 import React,{useState} from 'react'
 import FormList from './FormList';
 
-function FormPersonalDetails({nextStep,handleChanger,handlerArray,personalinfo,prevStep}) {
+function FormPersonalDetails({nextStep,handleChanger,handlerArray,personalinfo,prevStep,deleteEducation}) {
    const [education,setEducation] = useState({
        university:'',
        degree:'diploma',
@@ -100,7 +100,9 @@ const back =() => {
             </div>
             
 
-            <FormList personalinfo={personalinfo.education}/>
+            <FormList personalinfo={personalinfo.education}
+                deleteEducation={deleteEducation}
+            />
             
 
             <div className="d-flex justify-content-around pt-4">
