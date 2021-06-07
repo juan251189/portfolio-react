@@ -1,11 +1,19 @@
 import React from 'react'
 
-function Header({personalinfo}) {
+function Header({personalinfo,onImageChange}) {
     return (
         <section id="header" >
         <div className="container">
             <div className="row">
-                <div className="col-md-7 col-sm-12 header-content" ><img className="rounded-circle img-fluid" src="./assets/img/0fca8c9d6a679ffe7359fc3c44691d7b_270x480.jpg"/>
+                <div className="col-md-7 col-sm-12 header-content" >
+                <div>
+                {/* trying to render conditionally if image exists  */}
+                { !personalinfo.profilePicture ? (<input type="file" name="profilePicture" onChange={onImageChange} />):
+               (<img src={personalinfo.profilePicture} className="rounded-circle img-fluid"/>)
+                }
+            
+             </div>
+             
                  <div>  <h1 className="text-dark">{personalinfo.name}</h1>
                     <p className="title-profesion">Front End Software Engineer&nbsp;</p></div> 
                   </div>

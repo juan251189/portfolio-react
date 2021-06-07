@@ -32,6 +32,7 @@ function UserForm() {
        ],
        education:[],
        organizations:[],
+       profilePicture:'',
        step:1
     });
   
@@ -92,6 +93,12 @@ function UserForm() {
           
       }
 
+      const onImageChange = event => {
+        if (event.target.files && event.target.files[0]) {
+          let img = event.target.files[0];
+          setPersonalinfo({...personalinfo, 'profilePicture': URL.createObjectURL(img)});
+        }
+      };
 
     
 
@@ -106,7 +113,8 @@ function UserForm() {
             )
         case 2:
             return (
-                <FormPersonalDetails 
+       
+            <FormPersonalDetails 
                      nextStep={nextStep}
                     handleChanger={handleChanger}
                     handlerArray = {handlerArray}
@@ -114,6 +122,8 @@ function UserForm() {
                     prevStep={prevStep}
                     deleteEducation={deleteEducation}
                 />
+       
+            
             )  
          case 3:
             return(
@@ -131,7 +141,8 @@ function UserForm() {
         case 4:
             return(
                 <div className="cv-template container-fluid ">
-                     <Header personalinfo={personalinfo} />
+                        
+                     <Header personalinfo={personalinfo} onImageChange={onImageChange} />
 
 <ContentExperience personalinfo = {personalinfo} />
 

@@ -2,7 +2,7 @@
 import React from 'react'
 
 function ContentEducation({personalinfo}) {
-    const {university,degree,year} = personalinfo.education; 
+    const {university,degree,graduationDate} = personalinfo.education; 
     return (
         <section id="content-education" >
         <div className="container">
@@ -15,7 +15,7 @@ function ContentEducation({personalinfo}) {
                     <ul>
                     {personalinfo.education.map((item,index) =>(
                         <li key={index}>
-                            <span className="span-right">{item.year}</span>
+                            <span className="span-right">{item.graduationDate}</span>
                             <h4>{item.university}</h4>
                             {console.log(`Hi juan`+item)}
                             <p>
