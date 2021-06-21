@@ -16,11 +16,12 @@ function ContentEducation({personalinfo}) {
                     {personalinfo.education.map((item,index) =>(
                         <li key={index}>
                             <span className="span-right">{item.graduationDate}</span>
-                            <h4>{item.university}</h4>
+                            <h4>{item.course}</h4>
                             {console.log(`Hi juan`+item)}
                             <p>
-                              {item.degree}
+                              {item.university} - {item.degree}
                             </p>
+                           
                     </li>
                     ))}
                      

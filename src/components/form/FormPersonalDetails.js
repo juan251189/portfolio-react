@@ -41,7 +41,7 @@ const back =() => {
         <div className="form-personal-details container">
             <div className="jumbotron">FormPersonalDetails</div>
 
-            <div className="row form-inner">
+            <div className="row form-inner mb-4">
                 <div className="col-md-6 col-sm-12 mb-4">
                 
                 <input type="text" name="university" placeholder="University..."

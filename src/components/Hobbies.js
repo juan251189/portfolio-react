@@ -16,7 +16,7 @@ function Hobbies() {
                
                 </div>
             </div>  
-          s
+          
         </section>
     )
 }
