@@ -10,23 +10,26 @@ function ContentExperience({personalinfo}) {
     //    let finalArray = filterClicked.map(item => item.skill);
     //      handlerArray('skills',finalArray)
 
+//investigate why is not showing up data from personal info 
 
     return (
         <section id="content-experience">
             <div className="container">
                 <div className="row">
-                    <div className="col-md-6 pr-4">
+                    <div className="col-md-6 education-uni pr-5">
                         <h3><i className="fa fa-star fa-user" ></i>EXPERIENCE&nbsp;</h3>
                         <hr />
-                        <ul>
+                        <ul style={{listStyle:'none'}}>
 
-                        
-                            <li>
-                               <span className="span-right">2015-2016</span>
-                               <h4> Support Engineer&nbsp;</h4>
-                              
-                                <p>VERIDOOH</p>
+                        {personalinfo.experience.map((item,index) => (
+                            <li key={index}>
+                               <span className="span-right">{item.startDate}  -  {item.endDate}</span>
+                               <h4> {item.role} </h4>
+                              {console.log(index,personalinfo.experience)}
+                                <p>{item.company}</p>
                             </li>
+                        ))}
+                         
                          
                              
                         </ul>

@@ -1,13 +1,14 @@
 import React,{useState} from 'react'
 import FormList from './FormList';
 
-function FormPersonalDetails({nextStep,handleChanger,handlerArray,personalinfo,prevStep,deleteEducation}) {
+function FormEducation({nextStep,handleChanger,handlerArray,personalinfo,prevStep,deleteEducation}) {
    const [education,setEducation] = useState({
        university:'',
        degree:'diploma',
        graduationDate:'',
        course:''
    })
+   
    
    function handler (e){
       setEducation(
@@ -39,7 +40,7 @@ const back =() => {
 
     return (
         <div className="form-personal-details container">
-            <div className="jumbotron">FormPersonalDetails</div>
+            <div className="jumbotron">Education</div>
 
             <div className="row form-inner mb-4">
                 <div className="col-md-6 col-sm-12 mb-4">
@@ -102,6 +103,7 @@ const back =() => {
 
             <FormList personalinfo={personalinfo.education}
                 deleteEducation={deleteEducation}
+                data="education"
             />
             
 
@@ -124,4 +126,4 @@ const back =() => {
     )
 }
 
-export default FormPersonalDetails
+export default FormEducation

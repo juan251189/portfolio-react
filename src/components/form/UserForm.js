@@ -1,11 +1,13 @@
 import React,{useState} from 'react';
 import FormUserDetails from './FormUserDetails';
-import FormPersonalDetails from './FormPersonalDetails';
+import FormPersonalDetails from './FormEducation';
 import FormSkills from './FormSkills'
 import ContentExperience from '../ContentExperience';
 import Header from '../Header';
 import Hobbies from '../Hobbies';
 import ContentEducation from '../ContentEducation';
+import FormExperience from './FormExperience';
+import FormEducation from './FormEducation';
 
 function UserForm() {
 
@@ -82,14 +84,17 @@ function UserForm() {
         }
       }
 
-
-      function deleteEducation (i){
-          let educationArray = [...personalinfo.education];
+//refactor this function to be able to delete from other fields 
+      function deleteEducation (i,field){
+console.log(field);
+          let educationArray = [...personalinfo[field]];
+          console.log(educationArray);
           let newArray=educationArray[i];
+          console.log(newArray);
           let filteredArray = educationArray.filter(item =>item!==newArray)
         //  let finalArray = educationArray.filter.filteredlArray(educationArray,i);
         console.log(filteredArray);
-        setPersonalinfo({...personalinfo,'education':filteredArray})
+        setPersonalinfo({...personalinfo,[field]:filteredArray})
           
       }
 
@@ -114,7 +119,7 @@ function UserForm() {
         case 2:
             return (
        
-            <FormPersonalDetails 
+            <FormEducation 
                      nextStep={nextStep}
                     handleChanger={handleChanger}
                     handlerArray = {handlerArray}
@@ -125,7 +130,20 @@ function UserForm() {
        
             
             )  
-         case 3:
+
+        case 3 :
+          return(
+            <FormExperience 
+             nextStep={nextStep}
+                    handleChanger={handleChanger}
+                    handlerArray = {handlerArray}
+                    personalinfo={personalinfo}
+                    prevStep={prevStep}
+                    deleteEducation={deleteEducation}
+            />
+          )
+
+         case 4:
             return(
                 <FormSkills 
                 
@@ -138,7 +156,7 @@ function UserForm() {
 
                 />
             )    
-        case 4:
+        case 5:
             return(
                 <div className="cv-template container-fluid ">
                         
