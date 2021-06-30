@@ -19,7 +19,8 @@ function UserForm() {
        linkedin:"",
        github:"",
        experience:[],
-       aboutme:"",
+       aboutme:"I am passionate about web development, front end is the perfect way to show my creativity and project ideas through my knowledge’s in web technologies.",
+       heading:'',
        skills:[
         {skill:"html",isclicked:false},
         {skill:"css",isclicked:false},
@@ -78,7 +79,7 @@ function UserForm() {
           const completearray =[...personalinfo[name],evt];
         
         
-          console.log(completearray);
+       
 
         setPersonalinfo({...personalinfo,[name]:completearray})
         }
@@ -86,14 +87,14 @@ function UserForm() {
 
 //refactor this function to be able to delete from other fields 
       function deleteEducation (i,field){
-console.log(field);
+
           let educationArray = [...personalinfo[field]];
-          console.log(educationArray);
+          
           let newArray=educationArray[i];
-          console.log(newArray);
+       
           let filteredArray = educationArray.filter(item =>item!==newArray)
         //  let finalArray = educationArray.filter.filteredlArray(educationArray,i);
-        console.log(filteredArray);
+
         setPersonalinfo({...personalinfo,[field]:filteredArray})
           
       }
@@ -155,16 +156,20 @@ console.log(field);
                     prevStep={prevStep}
 
                 />
-            )    
+            )     
         case 5:
             return(
                 <div className="cv-template container-fluid ">
                         
                      <Header personalinfo={personalinfo} onImageChange={onImageChange} />
 
-<ContentExperience personalinfo = {personalinfo} />
+<ContentExperience personalinfo = {personalinfo}
+handleChanger={handleChanger}
+ />
 
-<ContentEducation personalinfo={personalinfo}/>
+<ContentEducation personalinfo={personalinfo}
+  handleChanger={handleChanger}
+/>
 <Hobbies />
                 </div>
                

@@ -13,7 +13,7 @@ function ListItem({arrayList,removeStudies,index,deleteEducation,data}) {
          <button className="remove-item" onClick={()=>deleteEducation(index,'education')}>x</button>
           <div className="item-uni">{arrayList.university}</div>
           <div className="item-degree">{arrayList.degree}</div> 
-         <div className="item-date">{arrayList.graduationDate}+{data}</div> 
+         <div className="item-date">{arrayList.graduationDate}</div> 
          </div>
          : 
          <div className="education-item">

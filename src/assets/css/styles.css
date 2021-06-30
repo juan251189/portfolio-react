@@ -162,9 +162,19 @@ hr{
     margin: 0;
     padding:0;
 overflow:hidden!important;
+color:rgba(0,0,0,0.7);
 
     
 }
+
+#content-education textarea{
+    color:rgba(0,0,0,0.7);
+}
+#content-education textarea:hover{
+    background-color: white!important;
+}
+
+
 
 #content-experience{
     background: #f5f4f2;
@@ -217,6 +227,35 @@ overflow:hidden!important;
     margin-top: -5px;
 }
 
+#content-experience .about-me:hover .edit-content { 
+display: block;
+}
+
+.edit-content{
+	padding-top: 7px;	
+	padding-right: 7px;
+	position: absolute;
+	right: 0;
+	top: 0;
+	display: none;
+}
+
+.heading-text :hover .edit-content{
+    display: block;
+}
+
+ textarea {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    text-align: center;
+
+    width: 100%;
+}
+
+textarea:hover{
+    background-color:white!important;
+}
 
 .education-uni{
     margin-bottom: 40px;

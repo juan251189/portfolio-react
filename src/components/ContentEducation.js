@@ -1,7 +1,7 @@
 
 import React from 'react'
 
-function ContentEducation({personalinfo}) {
+function ContentEducation({personalinfo,handleChanger}) {
     const {university,degree,graduationDate} = personalinfo.education; 
     return (
         <section id="content-education" >
@@ -29,12 +29,28 @@ function ContentEducation({personalinfo}) {
                 </ul>
                    
                 </div>
-                <div className="col-md-6  social">
-                    <h4><i className="fa fa-star fa-user" ></i>HEADING</h4>
-                    <hr  />
-                    <p className="p-3">I am passionate about web development, front end is the perfect way to show my creativity and project ideas through my knowledge’s in web technologies.<br /><br /></p>
-                    <p><br /></p>
-                </div>
+              
+            
+          <div className="col-md-6 heading-text">
+                                <h4><i className="fa fa-star fa-user" ></i>Header</h4>
+                                <hr/>
+                                <div>
+                                <div className="fa fa-pencil fa-lg edit-content"
+                                ></div>
+                               
+                            <textarea style={{backgroundColor:'#ffffff',border:'none'}}
+                                name="heading"
+        value={personalinfo.aboutme}
+          onChange={(evt)=>handleChanger(evt)}
+          rows={5}
+          cols={50}
+        />
+        
+                                <br /><br />
+                               
+                                </div>
+                                
+                            </div> 
             </div>
         </div>
     </section>
