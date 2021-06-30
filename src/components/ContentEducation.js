@@ -40,7 +40,7 @@ function ContentEducation({personalinfo,handleChanger}) {
                                
                             <textarea style={{backgroundColor:'#ffffff',border:'none'}}
                                 name="heading"
-        value={personalinfo.aboutme}
+        value={personalinfo.heading}
           onChange={(evt)=>handleChanger(evt)}
           rows={5}
           cols={50}
